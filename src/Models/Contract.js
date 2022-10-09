@@ -18,7 +18,7 @@ export class Contract {
      * });
      */
     constructor(options) {
-        this.packagename = "TicketForge.Models.Contract";
+        this.packagename = "OpenTicketAgency.Models.Contract";
 
         this.data = {
             contractId: options.contractId,

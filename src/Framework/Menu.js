@@ -7,7 +7,7 @@ export class Menu extends Craft.UI.View {
 
     constructor(options) {
         super(options || {});
-        this.packagename = "TicketForge.Framework.Menu";
+        this.packagename = "OpenTicketAgency.Framework.Menu";
         this.data = {
             wallectConnectedListener: null,
             wallectDisconnectedListener: null

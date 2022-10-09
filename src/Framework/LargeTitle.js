@@ -9,10 +9,10 @@ export class LargeTitle extends Title {
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.Framework.LargeTitle";
+        this.packagename = "OpenTicketAgency.Framework.LargeTitle";
         this.views = {
             title: new TitleText({
-                text: "TicketForge",
+                text: "OpenTicketAgency",
             }),
             wallet: new WalletConnectButton({}),
             menuArea: null,

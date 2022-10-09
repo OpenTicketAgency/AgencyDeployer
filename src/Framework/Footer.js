@@ -40,7 +40,7 @@ export class Footer extends Craft.UI.View {
     }
 
     template(componentId) {
-        // TODO: use TicketForge.Dic
+        // TODO: use OpenTicketAgency.Dic
         return `
             <div id="root" class="root">
                 <div id="container">

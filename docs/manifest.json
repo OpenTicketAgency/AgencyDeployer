@@ -1,6 +1,6 @@
 {
-	"name": "TicketForge",
-	"short_name": "TicketForge",
+	"name": "TicketAgencyDeployer",
+	"short_name": "Deployer",
 	"background_color": "#f0f0f0",
 	"icons": [{
 		"src": "img/icon-256.png",

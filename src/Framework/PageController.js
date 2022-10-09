@@ -11,7 +11,7 @@ export class PageController extends Craft.Widget.StickyHeaderNavi.ViewController
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.Framework.PageController";
+        this.packagename = "OpenTicketAgency.Framework.PageController";
         this.data = {
             PageCache: {},
             currentPage: null
@@ -49,13 +49,13 @@ export class PageController extends Craft.Widget.StickyHeaderNavi.ViewController
         }
 
         console.log(`resolveRoutingRequest: contractId: ${contractId}, pageName: ${pageName}`);
-        TicketForge.Context.contractId = contractId.toLowerCase();
+        OpenTicketAgency.Context.contractId = contractId.toLowerCase();
 
         this.openNamedPage(pageName.toLowerCase(), route);
     }
 
     openNamedPage(pageName, route) {
-        if (!route) { route = { path: `/${TicketForge.Context.contractId}/${pageName}` }; }
+        if (!route) { route = { path: `/${OpenTicketAgency.Context.contractId}/${pageName}` }; }
         switch (pageName) {
             case 'howto':
                 this.openHowtoPage(route);

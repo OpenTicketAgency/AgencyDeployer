@@ -11,7 +11,7 @@ export class AgencyDigest extends Craft.UI.View {
      */
     constructor(options) {
         super();
-        this.packagename = "TicketForge.PageElements.AgencyDigest";
+        this.packagename = "OpenTicketAgency.PageElements.AgencyDigest";
         this.data = {
             title: options.title,
             address: options.address,

@@ -7,7 +7,7 @@ export class WalletConnectButton extends Craft.UI.View {
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.PageElements.WalletConnectButton";
+        this.packagename = "OpenTicketAgency.PageElements.WalletConnectButton";
         this.data = {
             wallet: new Wallet(),
             wallectConnectedListener: null,
@@ -18,11 +18,11 @@ export class WalletConnectButton extends Craft.UI.View {
 
     viewDidLoad(callback) {
         this.data.wallectConnectedListener = Craft.Core.NotificationCenter.listen(
-            "TicketForge.Context.walletConnected",
+            "OpenTicketAgency.Context.walletConnected",
             this.updateButton.bind(this)
         );
         this.data.wallectDisconnectedListener = Craft.Core.NotificationCenter.listen(
-            "TicketForge.Context.walletDisconnected",
+            "OpenTicketAgency.Context.walletDisconnected",
             this.updateButton.bind(this)
         );
         if (callback) { callback(); }
@@ -41,7 +41,7 @@ export class WalletConnectButton extends Craft.UI.View {
         if (this.data.wallet.isConnected()) {
             console.log("updateButton (wallet is connected)");
             this.shadow.getElementById("button").innerHTML = `
-                Disconnect ${TicketForge.Utils.shortenAddress(this.data.wallet.data.account)}
+                Disconnect ${OpenTicketAgency.Utils.shortenAddress(this.data.wallet.data.account)}
             `;
         } else {
             console.log("updateButton (wallet is NOT connected)");

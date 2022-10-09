@@ -5,7 +5,7 @@ export class Title extends Craft.UI.View {
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.Framework.Title";
+        this.packagename = "OpenTicketAgency.Framework.Title";
         this.views = {};
     }
 
@@ -53,7 +53,7 @@ export class Title extends Craft.UI.View {
         return `
             <div id="root" class="root">
                 <div id="title">
-                    TicketForge Deploy
+                    OpenTicketAgency Deploy
                 </div>
             </div>
         `;

@@ -1,7 +1,7 @@
 
-# TicketForge agency deployer
+# Open ticket agency deployer
 
-This is a simple tool to deploy a TicketForge agency.
+This is a simple tool to deploy a Open Ticket Agency's agency contract.
 
 ## Usage
 
@@ -29,7 +29,7 @@ Available Accounts
 in another terminal
 
 ```bash
-$ cd /path/to/TicketForge
+$ cd /path/to/AgencyDeployer
 
 $ forge create --rpc-url http://127.0.0.1:8545/ --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 src/AgencyFactory.sol:AgencyFactory --hh
 No files changed, compilation skipped

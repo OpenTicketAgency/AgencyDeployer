@@ -11,7 +11,7 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
 
     constructor(options) {
         super(options || {});
-        this.packagename = "TicketForge.Pages.Agencies";
+        this.packagename = "OpenTicketAgency.Pages.Agencies";
         this.data = {
             wallectConnectedListener: null,
             wallectDisconnectedListener: null,
@@ -21,16 +21,16 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
             agencyList: null,
             toast: null
         };
-        this.path = `${TicketForge.Context.contractId}/agencies`;
+        this.path = `${OpenTicketAgency.Context.contractId}/agencies`;
     }
 
     viewDidLoad(callback) {
         this.data.wallectConnectedListener = Craft.Core.NotificationCenter.listen(
-            "TicketForge.Context.walletConnected",
+            "OpenTicketAgency.Context.walletConnected",
             this.walletStateChanged.bind(this)
         );
         this.data.wallectDisconnectedListener = Craft.Core.NotificationCenter.listen(
-            "TicketForge.Context.walletDisconnected",
+            "OpenTicketAgency.Context.walletDisconnected",
             this.walletStateChanged.bind(this)
         );
 
@@ -62,12 +62,12 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
     }
 
     async updateCreateButton() {
-        if (!TicketForge.Context.connectedContract) {
+        if (!OpenTicketAgency.Context.connectedContract) {
             console.log("contract is not connected");
             this.shadow.getElementById("status").innerHTML = "Contract is not connected";
             return;
         }
-        if (!TicketForge.Context.connectedWallet) {
+        if (!OpenTicketAgency.Context.connectedWallet) {
             console.log("wallet is not connected");
             this.shadow.getElementById("status").innerHTML = "You need to connect your wallet";
             this.shadow.getElementById("createButton").disabled = true;
@@ -81,9 +81,9 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
 
     async updateAgencies() {
         try {
-            if (!TicketForge.Context.connectedWallet) return;
-            let agencies = await TicketForge.Context.connectedContract.getContract().getAgenciesByAddress(
-                TicketForge.Context.connectedWallet.data.account
+            if (!OpenTicketAgency.Context.connectedWallet) return;
+            let agencies = await OpenTicketAgency.Context.connectedContract.getContract().getAgenciesByAddress(
+                OpenTicketAgency.Context.connectedWallet.data.account
             );
             console.log(agencies);
 
@@ -109,9 +109,9 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
 
     async createAgency() {
         try {
-            if (!TicketForge.Context.connectedWallet) return;
+            if (!OpenTicketAgency.Context.connectedWallet) return;
 
-            let createAgencyTxn = await TicketForge.Context.connectedContract.getContract().createAgency(
+            let createAgencyTxn = await OpenTicketAgency.Context.connectedContract.getContract().createAgency(
                 this.shadow.getElementById("title").value,
                 this.shadow.getElementById("description").value,
                 this.shadow.getElementById("image").value,
@@ -134,7 +134,7 @@ export class Agencies extends Craft.Widget.StickyHeaderNavi.Page {
                 message: "Your agency has been created",
             });
 
-            TicketForge.Context.Web3.provider.once("block", () => {
+            OpenTicketAgency.Context.Web3.provider.once("block", () => {
                 this.updateAgencies();
             });
 

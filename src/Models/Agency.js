@@ -11,7 +11,7 @@ export class Agency {
      * @param {string} options.contractId - The contract address
      */
     constructor(options) {
-        this.packagename = "TicketForge.Models.Agency";
+        this.packagename = "OpenTicketAgency.Models.Agency";
 
         this.data = {
             account: options.account,

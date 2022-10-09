@@ -1,7 +1,7 @@
 {
-  "name": "TicketForge",
+  "name": "ticketagencydeployer",
   "version": "0.0.1",
-  "description": "TicketForge",
+  "description": "Ticket Agency Deployer",
   "main": "",
   "directories": {},
   "scripts": {

@@ -6,8 +6,8 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname,'../docs/lib'),
-		filename: 'ticketforge.dev.js',
-		library: 'TicketForge',
+		filename: 'ticketagencydeployer.dev.js',
+		library: 'OpenTicketAgency',
 		libraryTarget: 'window',
 		globalObject: 'window'
 	}

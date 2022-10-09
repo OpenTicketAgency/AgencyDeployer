@@ -5,7 +5,7 @@ export class MenuButton extends Craft.UI.View {
 
     constructor(options) {
         super();
-        this.packagename = 'TicketForge.Framework.MenuButton';
+        this.packagename = 'OpenTicketAgency.Framework.MenuButton';
         this.data = {
             label: options.label,
             action: options.action // function

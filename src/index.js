@@ -1,8 +1,8 @@
 "use strict";
 
-const TicketForge = require("./TicketForge.js");
+const OpenTicketAgency = require("./OpenTicketAgency.js");
 
 const Craft = require("@craftkit/craft-uikit");
 window.Craft = Craft;
 
-module.exports = TicketForge.default || TicketForge;
+module.exports = OpenTicketAgency.default || OpenTicketAgency;

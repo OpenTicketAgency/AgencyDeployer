@@ -5,7 +5,7 @@ export class TitleText extends Craft.UI.View {
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.Framework.TitleText";
+        this.packagename = "OpenTicketAgency.Framework.TitleText";
         this.data = {
             text: options.text
         };

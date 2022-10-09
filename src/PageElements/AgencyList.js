@@ -5,7 +5,7 @@ export class AgencyList extends Craft.UI.View {
 
     constructor(options) {
         super(options);
-        this.packagename = "TicketForge.PageElements.AgencyList";
+        this.packagename = "OpenTicketAgency.PageElements.AgencyList";
     }
 
     clear() {

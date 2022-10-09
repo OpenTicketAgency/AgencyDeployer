@@ -8,7 +8,7 @@ export class SmallTitle extends Title {
 
     constructor(options) {
         super(options);
-        this.packagename = 'TicketForge.Framework.SmallTitle';
+        this.packagename = 'OpenTicketAgency.Framework.SmallTitle';
         this.views = {
             menu: null,
         };

@@ -7,7 +7,7 @@ export class Wallet {
      * @param {Object} options - Options for the Wallet
      */
     constructor(options) {
-        this.packagename = "TicketForge.Models.Wallet";
+        this.packagename = "OpenTicketAgency.Models.Wallet";
         this.data = {
             account: null
         };
@@ -31,7 +31,7 @@ export class Wallet {
         const { ethereum } = window;
         if (!ethereum) {
             alert("Please install MetaMask");
-            TicketForge.Context.connectedWallet = null; // will fire the notification "TicketForge.Context.walletDisconnected"
+            OpenTicketAgency.Context.connectedWallet = null; // will fire the notification "OpenTicketAgency.Context.walletDisconnected"
             return;
         }
         try {
@@ -40,10 +40,10 @@ export class Wallet {
             });
             if (accounts.length > 0) {
                 this.data.account = accounts[0];
-                TicketForge.Context.connectedWallet = this; // will fire the notification "TicketForge.Context.walletConnected"
+                OpenTicketAgency.Context.connectedWallet = this; // will fire the notification "OpenTicketAgency.Context.walletConnected"
             }
         } catch (e) {
-            TicketForge.Context.connectedWallet = null;
+            OpenTicketAgency.Context.connectedWallet = null;
             console.error(e);
         }
     }
@@ -55,7 +55,7 @@ export class Wallet {
      */
     disconnect() {
         this.data.account = null;
-        TicketForge.Context.connectedWallet = null; // will fire the notification "TicketForge.Context.walletDisconnected"
+        OpenTicketAgency.Context.connectedWallet = null; // will fire the notification "OpenTicketAgency.Context.walletDisconnected"
     }
 
 }

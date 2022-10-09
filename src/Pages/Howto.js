@@ -4,12 +4,12 @@ export class Howto extends Craft.Widget.StickyHeaderNavi.Page {
 
     constructor(options) {
         super(options || {});
-        this.packagename = "TicketForge.Pages.Howto";
+        this.packagename = "OpenTicketAgency.Pages.Howto";
         this.data = {
             mark: "howto"
         };
         this.views = {};
-        this.path = `${TicketForge.Context.contractId}/howto`;
+        this.path = `${OpenTicketAgency.Context.contractId}/howto`;
     }
 
     viewWillAppear(callback) {
@@ -40,7 +40,7 @@ export class Howto extends Craft.Widget.StickyHeaderNavi.Page {
         return `
             <div id="root" class="root">
                 <div class="message">
-                    <h1>How to use TicketForge</h1>
+                    <h1>How to use Open Ticket Agency Deployer</h1>
                 </div>
                 <div class="howto">
                     <p>
@@ -52,7 +52,7 @@ export class Howto extends Craft.Widget.StickyHeaderNavi.Page {
                     </p>
                     <p>
                         <ol>
-                            <li> Go to the <a href="/${TicketForge.Context.contractId}/agencies">My Agencies</a> page. <br/>
+                            <li> Go to the <a href="/${OpenTicketAgency.Context.contractId}/agencies">My Agencies</a> page. <br/>
                             <li> Connect your wallet if you haven't done so. <br/>
                             <li> Fill in the form and click the "Create" button. <br/>
                             <li> You will be asked to confirm the transaction in your wallet. <br/>
@@ -61,7 +61,7 @@ export class Howto extends Craft.Widget.StickyHeaderNavi.Page {
                         </ol>
                     </p>
                     <p>
-                        TicketForge is a smart contract that allows you to create ticketing service for your shows, 
+                        Open Ticket Agency is a smart contract that allows you to create ticketing service for your shows, 
                         concerts or any other kind of event. 
                     </p>
                     <p>

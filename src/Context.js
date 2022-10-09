@@ -58,17 +58,17 @@ export var Context = {
     /**
      * Set the connected contract and notify the listeners
      * 
-     * @param {TicketForge.Model.Contract} contract - The contract to set
+     * @param {OpenTicketAgency.Model.Contract} contract - The contract to set
      * @returns void
-     * @fires TicketForge.Context.connectedContract
-     * @fires TicketForge.Context.disconnectedContract
+     * @fires OpenTicketAgency.Context.connectedContract
+     * @fires OpenTicketAgency.Context.disconnectedContract
      */
     set connectedContract(contract) {
         this._connectedContract = contract;
         if (contract) {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.contractConnected", contract);
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.contractConnected", contract);
         } else {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.contractDisconnected");
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.contractDisconnected");
         }
         queueMicrotask(() => {
             this.checkIfOwner();
@@ -87,17 +87,17 @@ export var Context = {
     /**
      * Set the connected wallet and notify the listeners
      * 
-     * @param {Wallet} wallet - TicketForge.Model.Wallet
+     * @param {Wallet} wallet - OpenTicketAgency.Model.Wallet
      * @returns void
-     * @fires TicketForge.Context.connectedWallet
-     * @fires TicketForge.Context.disconnectedWallet
+     * @fires OpenTicketAgency.Context.connectedWallet
+     * @fires OpenTicketAgency.Context.disconnectedWallet
      */
     set connectedWallet(wallet) {
         this._connectedWallet = wallet;
         if (wallet) {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.walletConnected", wallet);
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.walletConnected", wallet);
         } else {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.walletDisconnected");
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.walletDisconnected");
         }
         console.log('Wallet');
         console.log(this.connectedWallet);
@@ -119,11 +119,11 @@ export var Context = {
      * Check if the connected wallet is the owner of the connected contract
      * 
      * @returns {void}
-     * @fires TicketForge.Context.connectedAsOwner - When the wallet is the owner of the contract
+     * @fires OpenTicketAgency.Context.connectedAsOwner - When the wallet is the owner of the contract
      */
     async checkIfOwner() {
         if (!this._connectedContract || !this._connectedWallet) {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.connectedAsNotOwner", null);
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.connectedAsNotOwner", null);
             console.log('Not owner');
             return;
         }
@@ -134,9 +134,9 @@ export var Context = {
         console.log("Owner: " + owner);
         console.log("Wallet: " + account);
         if (owner === account) {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.connectedAsOwner", owner);
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.connectedAsOwner", owner);
         } else {
-            Craft.Core.NotificationCenter.notify("TicketForge.Context.connectedAsNotOwner", owner);
+            Craft.Core.NotificationCenter.notify("OpenTicketAgency.Context.connectedAsNotOwner", owner);
         }
     }
 

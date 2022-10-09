@@ -12,7 +12,7 @@ export class Spacer extends Craft.UI.View {
      */
     constructor(options) {
         super(options);
-        this.packagename = 'TicketForge.Framework.Spacer';
+        this.packagename = 'OpenTicketAgency.Framework.Spacer';
         this.data = options;
     }
 

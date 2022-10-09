@@ -4,7 +4,7 @@ export class NotFound extends Craft.Widget.StickyHeaderNavi.Page {
 
     constructor(options) {
         super(options || {});
-        this.packagename = "TicketForge.Pages.NotFound";
+        this.packagename = "OpenTicketAgency.Pages.NotFound";
         this.data = {};
         this.views = {};
         this.path = `notfound`;
