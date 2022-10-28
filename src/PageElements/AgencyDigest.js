@@ -42,7 +42,7 @@ export class AgencyDigest extends Craft.UI.View {
     template(componentId) {
         return `
             <div id="root" class="root">
-                <a href="/agency/${this.data.address}/" 
+                <a href="${OpenTicketAgency.Config.AGENCY_SITE}/${this.data.address}/agency" 
                 target="_${this.data.address}" rel="nofollow noreferrer">
                     <div class="title">${this.data.title}</div>
                     <div class="address">(${this.data.address})</div>
